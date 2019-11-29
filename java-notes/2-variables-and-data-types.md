@@ -1,2 +1,0 @@
-# Variables and Data Types
-
