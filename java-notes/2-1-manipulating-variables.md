@@ -12,8 +12,9 @@
 * `<`: less than
 * `>=`:  greater than or equal to
 * `<=`:  less than or equal to
-* `==`:  equal to
+* `==`:  equal to (**address** comparison)
 * `!=`:  not equal to
 
 ## .equals()
 * Used to check equality for `String`
+* Compares the **content**
