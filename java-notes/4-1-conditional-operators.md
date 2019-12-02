@@ -1,6 +1,6 @@
 # Conditional Operators
 
-## AND
+## AND: &&
 ```java
 true && true
 // true
@@ -12,7 +12,7 @@ false && false
 // false
 ```
 
-## OR
+## OR: ||
 ```java
 true || true
 // true
@@ -21,5 +21,13 @@ false || true
 true || false
 // true
 false || false
+// false
+```
+
+## NOT: !
+```java
+!false
+// true
+!true
 // false
 ```
