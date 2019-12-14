@@ -1,2 +1,6 @@
 a-a-projects/
 node_modules/
+.vscode/
+__pycache__/
+non-commit/
+test.db
