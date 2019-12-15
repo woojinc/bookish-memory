@@ -22,3 +22,20 @@ class Solution:
 
         else:
             return []
+
+    def inorderTraversalIterate(self, root: TreeNode):
+
+        stack_inorder = [( root, "init" )]
+
+        while stack_inorder:
+            root, pos = stack_inorder.pop()
+
+            if root and pos != "root":
+                stack_inorder.append(( root.right, "right" ))
+                stack_inorder.append(( root, "root" ))
+                stack_inorder.append(( root.right, "left" ))
+            elif root and pos == "root":
+                self.inorder.append( root.val )
+
+
+        return self.inorder
