@@ -61,3 +61,16 @@ print("\n%04d %s %.2f %c" % (1, "Woojin", "1.234", 'A'))
 # %.2f => float with 2 decimal points
 # %c => char
 ```
+
+#### Taking Inputs
+
+```python
+import re
+
+# First input is the number of input
+# Then, for that number of inputs, it validates number
+
+for _ in range(int(input())):
+    print(bool(re.match(r'^[-+]?[0-9]*[.][0-9]+$', input())))
+```
+

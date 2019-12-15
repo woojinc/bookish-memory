@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
-    def reverseList(self, head):
+    def reverseList(self, head) -> ListNode:
         """
         :type head: ListNode
         :rtype: ListNode
