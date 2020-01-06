@@ -111,6 +111,8 @@ class MaxHeap {
 
 
 #### Python 3
+* Python 3 has heapq library that we can use: https://docs.python.org/3/library/heapq.html
+
 ```python
 class Heap:
     def __init__(self):
@@ -145,8 +147,8 @@ class Heap:
         leftIdx = self.leftIdx(idx)
         rightIdx = self.rightIdx(idx)
         currentVal = self.heapList[idx]
-        leftVal = self.heapList[leftIdx] if self.heapList[leftIdx] else float("-inf")
-        rightVal = self.heapList[rightIdx] if self.heapList[rightIdx] else float("-inf")
+        leftVal = self.heapList[leftIdx] if len(self.heapList) > leftIdx else float("-inf")
+        rightVal = self.heapList[rightIdx] if len(self.heapList) > rightIdx else float("-inf")
         swapIdx = None
 
         if currentVal > leftVal and currentVal > rightVal:
@@ -158,7 +160,7 @@ class Heap:
             swapIdx = rightIdx
 
         self.heapList[idx], self.heapList[swapIdx] = self.heapList[swapIdx], self.heapList[idx]
-        self.siftUp(swapIdx)
+        self.siftDown(swapIdx)
 
     def deleteMax(self):
         if len(self.heapList) == 2:
@@ -167,7 +169,7 @@ class Heap:
             return None
 
         maxVal = self.heapList[1]
-        self.heapList[1] = self.heapList.pop(-1)
+        self.heapList[1] = self.heapList.pop()
         self.siftDown(1)
 
         return maxVal
