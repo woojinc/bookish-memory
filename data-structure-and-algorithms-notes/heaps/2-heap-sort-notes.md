@@ -48,13 +48,25 @@ function swap(array, i, j) {
 
 ```python
 def heapSort(list):
-    for i in range(len(list) - 1, 0):
+    for i in reversed(range(len(list))):
         heapify(list, len(list), i)
-        
-    for endOfHeap in range(len(list) - 1, 0):
+    
+    print(f"Heapified list: {list}")
+
+    ## Ordered
+    # for endOfHeap in reversed(range(len(list))):
+    #     swap(list, endOfHeap, 0)
+    #     heapify(list, endOfHeap, 0)
+
+    ## Reverse Ordered
+    for endOfHeap in reversed(range(len(list))):
         swap(list, endOfHeap, 0)
+        list.append(list.pop(endOfHeap))
         heapify(list, endOfHeap, 0)
-        
+
+    print(f"Sorted list: {list}")
+
+
 def heapify(list, n, idx):
     leftIdx = 2 * idx + 1
     rightIdx = 2 * idx + 2
@@ -65,14 +77,14 @@ def heapify(list, n, idx):
 
     if currentVal > leftVal and currentVal > rightVal:
         return
-    
+
     swapIdx = None
 
-    if leftVal > ribhtVal:
+    if leftVal > rightVal:
         swapIdx = leftIdx
     else:
         swapIdx = rightIdx
-    
+
     swap(list, idx, swapIdx)
     heapify(list, n, swapIdx)
 
