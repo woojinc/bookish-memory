@@ -68,7 +68,24 @@ class MaxHeap {
     }
 }
 
+let heap = new MaxHeap()
+heap.insert(3)
+heap.insert(2)
+heap.insert(3)
+heap.insert(1)
+heap.insert(2)
+heap.insert(4)
+heap.insert(5)
+heap.insert(5)
+heap.insert(6)
 
-module.exports = {
-    MaxHeap
-};
+console.log(heap.array)
+
+console.log(heap.deleteMax())
+console.log(heap.array)
+console.log(heap.deleteMax())
+console.log(heap.array)
+console.log(heap.deleteMax())
+console.log(heap.array)
+console.log(heap.deleteMax())
+console.log(heap.array)
