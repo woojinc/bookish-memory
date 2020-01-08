@@ -3,6 +3,7 @@
 ## **Depth-First w/ GraphNode**
 
 * Key here is to keep track of the nodes that were visited, because graph might have a cycle
+
 ```javascript
 class GraphNode {
     constructor(val) {
