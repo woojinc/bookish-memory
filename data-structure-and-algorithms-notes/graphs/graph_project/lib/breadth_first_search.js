@@ -1,15 +1,16 @@
 function breadthFirstSearch(startingNode, targetVal) {
     
     let visited = new Set();
-    let nodes = [startingNode];
+    let queue = [startingNode];
 
-    while(nodes.length) {
-        let node = nodes.shift();
+    while(queue.length) {
+        let node = queue.shift();
         if (visited.has(node)) continue;
         visited.add(node);
 
         if (node.val === targetVal) return node;
-        nodes = nodes.concat(node.neighbors);
+        // queue = queue.concat(node.neighbors);
+        queue.push(...node.neighbors);
     }
 
     return null;
