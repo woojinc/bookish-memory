@@ -14,6 +14,35 @@ def depthFirstTraversal(node, visited=set()):
         depthFirstTraversal(neighbor, visited)
 
 
+def depthFirstTraversalIter(node):
+    visited = set()
+    stack = [node]
+
+    while stack:
+        node = stack.pop()
+        if node.val in visited:
+            continue
+        visited.add(node.val)
+
+        print(node.val)
+        # add neighbors in reverse order, to keep it left to right depth first
+        stack += node.neighbors[::-1]
+
+def breadthFirstTraversal(node):
+    visited = set()
+    queue = [node]
+
+    while queue:
+        node = queue.pop(0)
+        
+        if node.val in visited:
+            continue
+        visited.add(node.val)
+
+        queue += node.neighbors
+
+        print(node.val)
+
 a = GraphNode('a')
 b = GraphNode('b')
 c = GraphNode('c')
@@ -26,6 +55,8 @@ e.neighbors = [a]
 f.neighbors = [e]
 
 depthFirstTraversal(a)
+depthFirstTraversalIter(a)
+breadthFirstTraversal(a)
 
 
 

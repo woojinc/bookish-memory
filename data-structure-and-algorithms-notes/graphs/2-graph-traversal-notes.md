@@ -54,7 +54,7 @@ function depthFirstIter(node) {
         visited.add(node.val);
 
         // then add its neighbors to the stack
-        stack.push(...node.neighbors);
+        stack.push(...node.neighbors.reverse());
     }
 }
 
