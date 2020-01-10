@@ -26,6 +26,7 @@ def uniquePrefix(wordsList):
 class Node:
     def __init__(self):
         self.children = {}
+        self.endOfTheWord = False
         self.frequency = 1
 
 class Trie:
@@ -45,16 +46,21 @@ class Trie:
 
         if len(word) != 1:
             self.insert(word[1:], root.children[letter])
+        else:
+            root.children[letter].endOfTheWord = True
 
     def findShortestAllPrefix(self, root=None, word="", output=[]):
         if root is None:
             root = self.root
 
         for letter in root.children:
-            if root.children[letter].frequency != 1:
-                self.findShortestAllPrefix(root.children[letter], word + letter, output)
-            else:
+            childRoot = root.children[letter]
+            if childRoot.frequency == 1:
                 output.append(word + letter)
+            else:
+                if childRoot.endOfTheWord:
+                    output.append(word + letter)
+                self.findShortestAllPrefix(root.children[letter], word + letter, output)
 
         return output
 
@@ -66,4 +72,6 @@ trie.insert("zebra")
 trie.insert("dog")
 trie.insert("duck")
 trie.insert("dove")
+trie.insert("doved")
+trie.insert("doves")
 print(trie.findShortestAllPrefix())
