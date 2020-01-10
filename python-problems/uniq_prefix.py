@@ -60,7 +60,7 @@ class Trie:
             else:
                 if childRoot.endOfTheWord:
                     output.append(word + letter)
-                self.findShortestAllPrefix(root.children[letter], word + letter, output)
+                self.findShortestAllPrefix(childRoot, word + letter, output)
 
         return output
 
