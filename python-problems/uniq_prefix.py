@@ -12,7 +12,7 @@ def uniquePrefix(wordsList):
             output[idx] += prefix
 
         for idx in uniqueIndex:  # O(n)
-            if output.count(output[idx]) == 1: #O(n)
+            if output.count(output[idx]) == 1 or len(wordsList[idx]) - 1 == strIndex:  # O(n)
                 uniqueIndex.remove(idx) # O(n)
             else:
                 unique = False
@@ -65,7 +65,7 @@ class Trie:
         return output
 
 
-print(uniquePrefix(["zebra", "dog", "duck", "dove"]))
+print(uniquePrefix(["zebra", "dog", "duck", "dove", "doved", "doves"]))
 
 trie = Trie()
 trie.insert("zebra")
