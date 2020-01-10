@@ -21,7 +21,7 @@ def uniquePrefix(wordsList):
 
     return output
 
-# Total time complexity => O(mn^3)
+# Total time complexity => O(m * (n + n * (n + n))) => O(mn^2)
 
 class Node:
     def __init__(self):
