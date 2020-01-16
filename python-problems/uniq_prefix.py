@@ -65,7 +65,7 @@ class Trie:
         return output
 
 
-print(uniquePrefix(["zebra", "dog", "duck", "dove", "doved", "doves"]))
+print(uniquePrefix(["zebra", "dog", "duck", "dove", "doved", "doves", "dogs"]))
 
 trie = Trie()
 trie.insert("zebra")
@@ -74,4 +74,5 @@ trie.insert("duck")
 trie.insert("dove")
 trie.insert("doved")
 trie.insert("doves")
+trie.insert("dogs")
 print(trie.findShortestAllPrefix())
