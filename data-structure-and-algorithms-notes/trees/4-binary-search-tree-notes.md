@@ -24,3 +24,21 @@ function binarySearch(array, target) {
 }
 ```
 
+```ruby
+def binarySearch(array, target)
+    return false if array.length == 0
+
+    mid_index = array.length / 2
+
+    mid_value = array[mid_index]
+
+    if mid_value == target
+        return true
+    elsif mid_value > target
+        return binarySearch(array[0...mid_index], target)
+    elsif mid_value < target
+        return binarySearch(array[mid_index + 1..-1], target)
+    end
+
+end
+```
