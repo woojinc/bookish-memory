@@ -42,3 +42,25 @@ def binarySearch(array, target)
 
 end
 ```
+
+```python
+def binarySearch(array, target):
+    if len(array) == 0:
+        return False
+
+    mid_index = len(array) // 2
+    mid_value = array[mid_index]
+
+    if mid_value == target:
+        return True
+    elif mid_value > target:
+        return binarySearch(array[0: mid_index - 1], target)
+    elif mid_value < target:
+        return binarySearch(array[mid_index + 1: -1], target)
+
+array = [1,2,3,4,5,6,7,8,9,10]
+
+print(binarySearch(array, 6)) # True
+print(binarySearch(array, 14)) # False
+    
+```
